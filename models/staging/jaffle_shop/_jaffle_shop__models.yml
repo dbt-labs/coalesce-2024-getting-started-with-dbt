@@ -9,6 +9,7 @@ models:
           - not_null
 
   - name: stg_jaffle_shop__orders
+    description: One record per order
     columns:
       - name: order_id
         data_tests:

@@ -2,6 +2,7 @@ version: 2
 
 sources:
 - name: jaffle_shop
+  description: A replica of the postgres database
   database: raw
   schema: jaffle_shop
 
@@ -14,6 +15,7 @@ sources:
             - unique
 
     - name: orders
+      description: One record per order
       loaded_at_field: _etl_loaded_at
       freshness:
         warn_after:
