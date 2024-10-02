@@ -1,11 +1,17 @@
-
 version: 2
+
 sources:
 - name: jaffle_shop
   database: raw
+  schema: jaffle_shop
 
   tables:
     - name: customers
+      columns:
+        - name: id
+          data_tests:
+            - not_null
+            - unique
 
     - name: orders
       loaded_at_field: _etl_loaded_at
