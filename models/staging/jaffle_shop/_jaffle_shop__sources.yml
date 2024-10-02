@@ -8,8 +8,10 @@ sources:
 
   tables:
     - name: customers
+      description: One record per customer
       columns:
         - name: id
+          description: Primay key column which should be unique and not null
           data_tests:
             - not_null
             - unique
@@ -24,4 +26,8 @@ sources:
         error_after:
           count: 24
           period: hour
+
+      columns:
+        - name: status
+          description: "{{ doc('order_status') }}"
 
