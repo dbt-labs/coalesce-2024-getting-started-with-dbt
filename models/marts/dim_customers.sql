@@ -5,7 +5,7 @@ with customers as (
 
 orders as (
 
-    {{ ref('stg_jaffle_shop__orders') }}
+    select * from {{ ref('stg_jaffle_shop__orders') }}
 
 ),
 
