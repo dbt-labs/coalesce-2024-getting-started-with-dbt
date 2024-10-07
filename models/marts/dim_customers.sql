@@ -5,13 +5,13 @@
 }}
 
 with customers as (
-{{ref('stg_jaffle_shop__customers')}}
+select * from {{ref('stg_jaffle_shop__customers')}}
 
 
 ),
 
 orders as (
-{{ref('stg_jaffle_shop__orders')}}
+select * from {{ref('stg_jaffle_shop__orders')}}
 ),
 
 customer_orders as (
