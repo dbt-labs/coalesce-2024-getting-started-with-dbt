@@ -10,8 +10,8 @@ with customers as (
         id as customer_id,
         first_name,
         last_name
+    from {{source('jaffle_shop','customers')}}
 
-    from raw.jaffle_shop.customers
 
 ),
 
@@ -23,8 +23,7 @@ orders as (
         order_date,
         status,
         _etl_loaded_at
-
-    from raw.jaffle_shop.orders
+    from {{source('jaffle_shop','orders')}}
 
 ),
 
