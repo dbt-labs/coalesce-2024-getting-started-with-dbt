@@ -5,17 +5,22 @@
 }}
 with customers as (
 
+<<<<<<< HEAD
     select
         id as customer_id,
         first_name,
         last_name
 
     from {{ref('stg_jaffle_shop__customers')}}
+=======
+    select * from {{ ref('stg_jaffle_shop__customers') }}
+>>>>>>> 28dd81ec834d12b3e13abce953baadf200306b52
 
 ),
 
 orders as (
 
+<<<<<<< HEAD
     select
         id as order_id,
         user_id as customer_id,
@@ -24,6 +29,9 @@ orders as (
         _etl_loaded_at
 
     from {{ref('stg_jaffle_shop__orders')}}
+=======
+    select * from {{ ref('stg_jaffle_shop__orders') }}
+>>>>>>> 28dd81ec834d12b3e13abce953baadf200306b52
 
 ),
 

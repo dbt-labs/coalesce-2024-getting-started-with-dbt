@@ -1,6 +1,7 @@
 version: 2
 
 sources:
+<<<<<<< HEAD
   - name: jaffle_shop
     database: raw
     schema: jaffle_shop
@@ -12,3 +13,35 @@ sources:
             data_tests:
               - not_null
               - unique
+=======
+- name: jaffle_shop
+  description: A replica of the postgres database
+  database: raw
+  schema: jaffle_shop
+
+  tables:
+    - name: customers
+      description: One record per customer
+      columns:
+        - name: id
+          description: Primay key column which should be unique and not null
+          data_tests:
+            - not_null
+            - unique
+
+    - name: orders
+      description: One record per order
+      loaded_at_field: _etl_loaded_at
+      freshness:
+        warn_after:
+          count: 12
+          period: hour
+        error_after:
+          count: 24
+          period: hour
+
+      columns:
+        - name: status
+          description: "{{ doc('order_status') }}"
+
+>>>>>>> 28dd81ec834d12b3e13abce953baadf200306b52

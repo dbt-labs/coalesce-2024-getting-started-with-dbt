@@ -9,7 +9,11 @@ source as (
 renamed as (
 
     select
+<<<<<<< HEAD
         id,
+=======
+        id as customer_id,
+>>>>>>> 28dd81ec834d12b3e13abce953baadf200306b52
         first_name,
         last_name
 
