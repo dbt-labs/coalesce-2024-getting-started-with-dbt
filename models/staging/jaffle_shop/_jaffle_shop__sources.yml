@@ -7,3 +7,9 @@ sources:
     tables:
       - name: orders
       - name: customers
+        columns:
+          - name: id
+            data_tests:
+            - not_null
+            - unique
+                
