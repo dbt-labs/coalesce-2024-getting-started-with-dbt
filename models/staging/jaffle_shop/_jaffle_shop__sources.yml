@@ -2,14 +2,13 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: raw  
-    schema: jaffle_shop  
+    database: raw
+    schema: jaffle_shop
     tables:
       - name: orders
       - name: customers
         columns:
           - name: id
             data_tests:
-            - not_null
-            - unique
-                
+              - not_null
+              - unique
